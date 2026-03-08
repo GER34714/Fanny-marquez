@@ -21,7 +21,7 @@
     :root{
       --bg:#f7f1ed;
       --bg-soft:#fcf8f5;
-      --card:rgba(255,255,255,.78);
+      --card:rgba(255,255,255,.82);
       --text:#2f2927;
       --muted:#6f6762;
       --line:#e8ddd6;
@@ -35,7 +35,7 @@
     body.dark{
       --bg:#171312;
       --bg-soft:#211a18;
-      --card:rgba(36,29,27,.78);
+      --card:rgba(36,29,27,.82);
       --text:#f3ece8;
       --muted:#c8b9b1;
       --line:#3a2f2b;
@@ -52,25 +52,21 @@
       font-family:Inter, Arial, sans-serif;
       color:var(--text);
       background-color:var(--bg);
-      background-image:
-        linear-gradient(rgba(247,241,237,.38), rgba(247,241,237,.38)),
-        url("https://iili.io/qIxLCWx.jpg");
-      background-size:cover, cover;
-      background-position:center center, center top;
-      background-repeat:no-repeat, no-repeat;
-      background-attachment:fixed, fixed;
-      transition:background .25s ease, color .25s ease;
+      background-image:url("https://iili.io/qIxLCWx.jpg");
+      background-size:cover;
+      background-position:center top;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
+      transition:background-color .25s ease, color .25s ease;
       overflow-x:hidden;
     }
 
     body.dark{
-      background-image:
-        linear-gradient(rgba(23,19,18,.36), rgba(23,19,18,.36)),
-        url("https://iili.io/qIxeKCu.jpg");
-      background-size:cover, cover;
-      background-position:center center, center top;
-      background-repeat:no-repeat, no-repeat;
-      background-attachment:fixed, fixed;
+      background-image:url("https://iili.io/qIxeKCu.jpg");
+      background-size:cover;
+      background-position:center top;
+      background-repeat:no-repeat;
+      background-attachment:fixed;
     }
 
     img{display:block;max-width:100%}
@@ -88,13 +84,13 @@
       z-index:1000;
       min-height:var(--header-h);
       border-bottom:1px solid rgba(232,221,214,.72);
-      background:rgba(247,241,237,.56);
+      background:rgba(247,241,237,.62);
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
     }
 
     body.dark .site-header{
-      background:rgba(23,19,18,.60);
+      background:rgba(23,19,18,.62);
       border-bottom:1px solid rgba(58,47,43,.82);
     }
 
@@ -290,18 +286,6 @@
       overflow:hidden;
     }
 
-    .hero-banner::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.14);
-      pointer-events:none;
-    }
-
-    body.dark .hero-banner::before{
-      background:rgba(0,0,0,.22);
-    }
-
     .hero-inner{
       position:relative;
       z-index:2;
@@ -327,12 +311,12 @@
       gap:8px;
       padding:10px 16px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.34);
-      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.42);
+      background:rgba(0,0,0,.16);
       color:#fff;
       font-size:.92rem;
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
     }
 
     .hero-copy h1{
@@ -341,16 +325,16 @@
       line-height:.96;
       letter-spacing:-.05em;
       color:#fff;
-      text-shadow:0 8px 24px rgba(0,0,0,.22);
+      text-shadow:0 8px 24px rgba(0,0,0,.30);
     }
 
     .hero-copy p{
       margin:0;
       font-size:1.04rem;
       line-height:1.74;
-      color:rgba(255,255,255,.98);
+      color:#fff;
       max-width:580px;
-      text-shadow:0 6px 18px rgba(0,0,0,.18);
+      text-shadow:0 6px 18px rgba(0,0,0,.28);
     }
 
     .hero-logo-wrap{
@@ -368,8 +352,8 @@
       padding:8px;
       margin-left:auto;
       margin-right:6%;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.20);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.22);
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
     }
@@ -400,14 +384,22 @@
     }
 
     .quick-card{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.22);
+      background:rgba(255,255,255,.74);
+      border:1px solid rgba(47,41,39,.14);
       border-radius:22px;
       padding:18px;
       text-align:center;
-      color:#fff;
+      color:#2f2927;
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+
+    body.dark .quick-card{
+      background:rgba(23,19,18,.52);
+      border:1px solid rgba(255,255,255,.16);
+      color:#fff;
+      box-shadow:none;
     }
 
     .quick-card strong{
@@ -419,9 +411,13 @@
 
     .quick-card span{
       display:block;
-      color:rgba(255,255,255,.94);
+      color:#4a433f;
       line-height:1.55;
       font-size:.94rem;
+    }
+
+    body.dark .quick-card span{
+      color:rgba(255,255,255,.92);
     }
 
     .mobile-hero-logo{
@@ -432,8 +428,8 @@
       border-radius:50%;
       overflow:hidden;
       padding:8px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.22);
       backdrop-filter:blur(4px);
       -webkit-backdrop-filter:blur(4px);
     }
@@ -724,7 +720,7 @@
     @media (max-width: 860px){
       body,
       body.dark{
-        background-attachment:scroll, scroll;
+        background-attachment:scroll;
       }
 
       .desktop-nav{
@@ -751,9 +747,9 @@
       .hero-inner{
         width:min(100% - 20px, 1120px);
         min-height:520px;
-        padding:24px 0 24px;
+        padding:18px 0 24px;
         gap:0;
-        align-items:center;
+        align-items:start;
       }
 
       .hero-logo-wrap{
@@ -762,7 +758,8 @@
 
       .hero-copy{
         max-width:none;
-        align-self:center;
+        align-self:start;
+        padding-top:8px;
       }
 
       .hero-copy h1{
@@ -821,6 +818,14 @@
 
       .hero-inner{
         min-height:500px;
+      }
+
+      .hero-copy{
+        padding-top:0;
+      }
+
+      .hero-copy .eyebrow{
+        margin-top:0;
       }
 
       .hero-actions,
@@ -1279,4 +1284,4 @@
     });
   </script>
 </body>
-</html>
+      </html>
