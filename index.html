@@ -28,7 +28,7 @@
       --line:#e8ddd6;
       --accent:#b89586;
       --accent-2:#d9c3b7;
-      --shadow:0 14px 34px rgba(80, 56, 45, .12);
+      --shadow:0 14px 34px rgba(80,56,45,.12);
       --radius:28px;
       --header-h:82px;
     }
@@ -55,7 +55,7 @@
       color:var(--text);
       background-color:var(--bg);
       background-image:
-        linear-gradient(rgba(247,241,237,.42), rgba(247,241,237,.42)),
+        linear-gradient(rgba(247,241,237,.34), rgba(247,241,237,.34)),
         url("https://iili.io/qIxLCWx.jpg");
       background-size:cover, cover;
       background-position:center center, center top;
@@ -68,7 +68,7 @@
     body.dark{
       background-color:var(--bg);
       background-image:
-        linear-gradient(rgba(23,19,18,.44), rgba(23,19,18,.44)),
+        linear-gradient(rgba(23,19,18,.38), rgba(23,19,18,.38)),
         url("https://iili.io/qIxeKCu.jpg");
       background-size:cover, cover;
       background-position:center center, center top;
@@ -188,6 +188,7 @@
       border:none;
       transition:.2s ease;
       cursor:pointer;
+      font-family:inherit;
     }
 
     .btn{
@@ -281,14 +282,14 @@
     }
 
     .hero{
-      padding:0 0 38px;
+      padding:0 0 28px;
     }
 
     .hero-banner{
       position:relative;
       width:100vw;
       margin-left:calc(50% - 50vw);
-      min-height:700px;
+      min-height:670px;
       overflow:hidden;
       background:url("https://iili.io/qIxo8hJ.jpg") center center / cover no-repeat;
       display:flex;
@@ -299,14 +300,12 @@
       content:"";
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(90deg, rgba(20,16,14,.32) 0%, rgba(20,16,14,.18) 42%, rgba(20,16,14,.10) 72%, rgba(20,16,14,.06) 100%);
+      background:linear-gradient(90deg, rgba(18,14,13,.18) 0%, rgba(18,14,13,.10) 38%, rgba(18,14,13,.04) 70%, rgba(18,14,13,0) 100%);
       pointer-events:none;
     }
 
     body.dark .hero-banner::before{
-      background:
-        linear-gradient(90deg, rgba(8,7,7,.42) 0%, rgba(8,7,7,.22) 42%, rgba(8,7,7,.12) 72%, rgba(8,7,7,.08) 100%);
+      background:linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.18) 38%, rgba(0,0,0,.08) 70%, rgba(0,0,0,0) 100%);
     }
 
     .hero-layout{
@@ -315,19 +314,18 @@
       width:min(1240px, calc(100% - 32px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:1.15fr .85fr;
-      align-items:center;
+      grid-template-columns:1.05fr .95fr;
+      align-items:end;
       gap:24px;
-      padding:70px 0 54px;
+      padding:44px 0 54px;
+      min-height:670px;
     }
 
     .hero-text{
-      max-width:700px;
+      max-width:620px;
       color:#fff;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      min-height:540px;
+      align-self:end;
+      padding-bottom:8px;
     }
 
     .eyebrow{
@@ -340,99 +338,49 @@
       background:rgba(255,255,255,.10);
       color:#fff;
       font-size:.92rem;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
       width:max-content;
       max-width:100%;
     }
 
     .hero-text h1{
       margin:18px 0 14px;
-      font-size:clamp(2.3rem, 5vw, 4.4rem);
-      line-height:1.02;
+      font-size:clamp(2.5rem, 5vw, 4.5rem);
+      line-height:1;
       letter-spacing:-.05em;
       color:#fff;
-      text-shadow:0 6px 22px rgba(0,0,0,.16);
-      max-width:760px;
+      text-shadow:0 6px 20px rgba(0,0,0,.22);
+      max-width:720px;
     }
 
     .hero-text p{
-      margin:0 0 30px;
+      margin:0;
       font-size:1.05rem;
       line-height:1.76;
       color:rgba(255,255,255,.96);
-      max-width:650px;
-      text-shadow:0 4px 18px rgba(0,0,0,.14);
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:6px;
-      margin-bottom:0;
-      padding-top:10px;
-    }
-
-    .hero-actions .btn-secondary{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.24);
-      color:#fff;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-    }
-
-    .quick-info{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:14px;
-      margin-top:30px;
-    }
-
-    .quick-card{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.18);
-      border-radius:22px;
-      padding:18px;
-      box-shadow:0 14px 34px rgba(0,0,0,.10);
-      text-align:center;
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
-      color:#fff;
-    }
-
-    .quick-card strong{
-      display:block;
-      font-size:1.08rem;
-      letter-spacing:-.02em;
-      margin-bottom:6px;
-    }
-
-    .quick-card span{
-      display:block;
-      color:rgba(255,255,255,.92);
-      line-height:1.55;
-      font-size:.94rem;
+      max-width:560px;
+      text-shadow:0 4px 14px rgba(0,0,0,.18);
     }
 
     .hero-logo-wrap{
       display:flex;
-      justify-content:center;
-      align-items:center;
-      padding-top:34px;
+      justify-content:flex-end;
+      align-items:flex-start;
+      padding-top:8px;
     }
 
     .hero-logo{
-      width:min(380px, 92%);
+      width:min(360px, 88%);
       aspect-ratio:1/1;
       border-radius:50%;
       overflow:hidden;
-      padding:14px;
+      padding:12px;
+      background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.08);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      box-shadow:0 26px 56px rgba(0,0,0,.14);
+      box-shadow:0 22px 52px rgba(0,0,0,.14);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
     }
 
     .hero-logo img{
@@ -443,24 +391,53 @@
       background:transparent;
     }
 
-    .about-logo{
-      display:none;
-      width:min(220px, 72%);
-      aspect-ratio:1/1;
-      margin:0 auto 24px;
-      border-radius:50%;
-      overflow:hidden;
-      padding:12px;
-      border:1px solid var(--line);
-      background:var(--card);
-      box-shadow:var(--shadow);
+    .hero-bottom{
+      margin-top:-6px;
     }
 
-    .about-logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      border-radius:50%;
+    .hero-bottom-inner{
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .hero-chips{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:14px;
+    }
+
+    .chip{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px 16px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      text-align:center;
+    }
+
+    .chip strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:1.02rem;
+      letter-spacing:-.02em;
+    }
+
+    .chip span{
+      display:block;
+      color:var(--muted);
+      line-height:1.62;
+      font-size:.95rem;
     }
 
     .section{
@@ -724,23 +701,33 @@
         grid-template-columns:1fr;
       }
 
-      .quick-info,
-      .benefits-grid{
-        grid-template-columns:repeat(2, 1fr);
+      .hero-layout{
+        align-items:end;
+        gap:10px;
+        padding:40px 0 42px;
       }
 
       .hero-logo-wrap{
         justify-content:flex-end;
-        padding-top:0;
+        align-items:flex-start;
       }
 
       .hero-logo{
-        width:min(320px, 68%);
+        width:min(280px, 56%);
       }
 
-      .hero-text{
-        min-height:auto;
-        padding-top:22px;
+      .hero-bottom-inner{
+        grid-template-columns:1fr;
+      }
+
+      .hero-chips,
+      .benefits-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .services-grid{
+        grid-template-columns:1fr;
       }
     }
 
@@ -758,57 +745,75 @@
         display:flex;
       }
 
-      .about-grid,
-      .services-grid{
-        grid-template-columns:1fr;
-      }
-
       .hero{
-        padding:0 0 24px;
+        padding:0 0 22px;
       }
 
       .hero-banner{
         min-height:680px;
-        align-items:center;
+        background-position:center center;
+        align-items:flex-end;
+      }
+
+      .hero-banner::before{
+        background:linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.04) 42%, rgba(0,0,0,.26) 100%);
+      }
+
+      body.dark .hero-banner::before{
+        background:linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.08) 42%, rgba(0,0,0,.34) 100%);
       }
 
       .hero-layout{
         width:min(100% - 20px, 1120px);
-        gap:0;
-        padding:54px 0 52px;
-      }
-
-      .hero-banner::before{
-        background:
-          linear-gradient(180deg, rgba(20,16,14,.24) 0%, rgba(20,16,14,.16) 38%, rgba(20,16,14,.24) 100%);
-      }
-
-      body.dark .hero-banner::before{
-        background:
-          linear-gradient(180deg, rgba(8,7,7,.34) 0%, rgba(8,7,7,.22) 38%, rgba(8,7,7,.30) 100%);
+        min-height:680px;
+        padding:26px 0 28px;
+        align-items:end;
+        gap:18px;
       }
 
       .hero-text{
         max-width:none;
-        min-height:auto;
-        justify-content:center;
-        text-align:left;
+        padding-bottom:0;
       }
 
       .hero-text h1{
-        max-width:560px;
+        font-size:clamp(2.1rem, 8.2vw, 3.2rem);
+        max-width:520px;
+      }
+
+      .hero-text p{
+        max-width:500px;
+        font-size:1rem;
       }
 
       .hero-logo-wrap{
-        display:none;
+        justify-content:flex-end;
+        align-items:flex-start;
+        padding-top:0;
       }
 
-      .quick-info{
-        display:none;
+      .hero-logo{
+        width:min(180px, 42vw);
+        padding:8px;
+        background:rgba(255,255,255,.05);
       }
 
-      .about-logo{
-        display:block;
+      .hero-bottom-inner{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+
+      .hero-actions{
+        display:grid;
+        grid-template-columns:1fr;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .hero-chips{
+        grid-template-columns:repeat(2, 1fr);
       }
     }
 
@@ -844,12 +849,13 @@
       }
 
       .hero-banner{
-        min-height:640px;
-        background-position:center center;
+        min-height:650px;
+        background-position:62% center;
       }
 
       .hero-layout{
-        padding:42px 0 42px;
+        min-height:650px;
+        padding:22px 0 24px;
       }
 
       .eyebrow{
@@ -858,7 +864,6 @@
       }
 
       .hero-text h1{
-        font-size:clamp(2rem, 8.4vw, 3rem);
         margin-top:14px;
       }
 
@@ -869,23 +874,21 @@
         font-size:.98rem;
       }
 
-      .hero-actions,
-      .mobile-actions{
-        display:grid;
-        grid-template-columns:1fr;
+      .hero-logo{
+        width:min(150px, 38vw);
       }
 
-      .hero-actions{
-        margin-top:14px;
-        padding-top:14px;
+      .hero-bottom{
+        margin-top:0;
       }
 
-      .btn{
-        width:100%;
-      }
-
+      .hero-chips,
       .benefits-grid{
         grid-template-columns:1fr;
+      }
+
+      .chip{
+        text-align:left;
       }
 
       .gallery-item{
@@ -904,11 +907,6 @@
 
       .gallery-copy h3{
         font-size:1.22rem;
-      }
-
-      .about-logo{
-        width:min(210px, 78%);
-        margin-bottom:22px;
       }
 
       .cta-final{
@@ -995,30 +993,6 @@
             <p>
               Tratamientos orientados a revitalizar la piel, armonizar el rostro y acompañar cada necesidad con atención delicada y resultados sutiles.
             </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
-              <a class="btn btn-secondary" href="#tratamientos">Ver tratamientos</a>
-            </div>
-
-            <div class="quick-info">
-              <div class="quick-card">
-                <strong>📍 Córdoba</strong>
-                <span>Atención con contacto directo y ágil</span>
-              </div>
-              <div class="quick-card">
-                <strong>📲 Turnos</strong>
-                <span>3512436879</span>
-              </div>
-              <div class="quick-card">
-                <strong>Naturalidad</strong>
-                <span>Resultados delicados y armónicos</span>
-              </div>
-              <div class="quick-card">
-                <strong>Bienestar</strong>
-                <span>Cuidado pensado para cada piel</span>
-              </div>
-            </div>
           </div>
 
           <div class="hero-logo-wrap">
@@ -1028,14 +1002,38 @@
           </div>
         </div>
       </div>
+
+      <div class="container hero-bottom">
+        <div class="hero-bottom-inner">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
+            <a class="btn btn-secondary" href="#tratamientos">Ver tratamientos</a>
+          </div>
+
+          <div class="hero-chips">
+            <div class="chip">
+              <strong>📍 Córdoba</strong>
+              <span>Atención con contacto directo y ágil</span>
+            </div>
+            <div class="chip">
+              <strong>📲 Turnos</strong>
+              <span>3512436879</span>
+            </div>
+            <div class="chip">
+              <strong>Naturalidad</strong>
+              <span>Resultados delicados y armónicos</span>
+            </div>
+            <div class="chip">
+              <strong>Bienestar</strong>
+              <span>Cuidado pensado para cada piel</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="sobre-mi">
       <div class="container">
-        <div class="about-logo">
-          <img src="https://iili.io/qIqMwV1.png" alt="Logo Fanny Marquez" />
-        </div>
-
         <div class="section-head">
           <span class="eyebrow" style="color:var(--text); background:var(--card); border-color:var(--line);">Sobre mí</span>
           <h2 class="section-title">Fanny Marquez</h2>
