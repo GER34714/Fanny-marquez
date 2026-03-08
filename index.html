@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fanny Marquez | Estética facial</title>
+  <meta name="description" content="Dermatocosmiatra especializada en piel. Tratamientos faciales, rejuvenecimiento natural, mesoterapia, limpieza profunda y atención profesional en Córdoba." />
+
+  <meta property="og:title" content="Fanny Marquez | Estética facial" />
+  <meta property="og:description" content="Tratamientos faciales personalizados, resultados naturales y turnos por WhatsApp en Córdoba." />
+  <meta property="og:image" content="https://iili.io/qzLkmiP.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fanny Marquez | Estética facial" />
+  <meta name="twitter:description" content="Tratamientos faciales personalizados, resultados naturales y turnos por WhatsApp en Córdoba." />
+  <meta name="twitter:image" content="https://iili.io/qzLkmiP.png" />
+
+  <style>
+    :root{
+      --bg:#f7f1ed;
+      --bg-soft:#fcf8f5;
+      --card:rgba(255,255,255,.78);
+      --card-solid:#ffffff;
+      --text:#2f2927;
+      --muted:#6f6762;
+      --line:#e8ddd6;
+      --accent:#b89586;
+      --accent-2:#d9c3b7;
+      --shadow:0 14px 34px rgba(80, 56, 45, .12);
+      --radius:28px;
+      --header-h:82px;
+    }
+
+    body.dark{
+      --bg:#171312;
+      --bg-soft:#211a18;
+      --card:rgba(36,29,27,.78);
+      --card-solid:#241d1b;
+      --text:#f3ece8;
+      --muted:#c8b9b1;
+      --line:#3a2f2b;
+      --accent:#d7b6a3;
+      --accent-2:#8f7367;
+      --shadow:0 18px 42px rgba(0,0,0,.34);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(216,195,184,.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(184,149,134,.12), transparent 28%),
+        var(--bg);
+      transition:background .25s ease, color .25s ease;
+      overflow-x:hidden;
+    }
+
+    img{display:block; max-width:100%}
+    a{text-decoration:none; color:inherit}
+    button{font-family:inherit}
+
+    .container{
+      width:min(1120px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      min-height:var(--header-h);
+      border-bottom:1px solid rgba(232,221,214,.72);
+      background:rgba(247,241,237,.78);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    body.dark .site-header{
+      background:rgba(23,19,18,.82);
+      border-bottom:1px solid rgba(58,47,43,.82);
+    }
+
+    .nav{
+      min-height:var(--header-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+      flex:1 1 auto;
+    }
+
+    .brand-logo{
+      width:56px;
+      height:56px;
+      min-width:56px;
+      border-radius:50%;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:var(--bg-soft);
+      box-shadow:var(--shadow);
+    }
+
+    .brand-logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .brand-copy{
+      min-width:0;
+    }
+
+    .brand-copy strong{
+      display:block;
+      font-size:1rem;
+      letter-spacing:-.02em;
+    }
+
+    .brand-copy span{
+      display:block;
+      color:var(--muted);
+      font-size:.92rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .desktop-nav{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--muted);
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      background:var(--card);
+      color:var(--text);
+    }
+
+    .btn,
+    .theme-toggle,
+    .menu-toggle{
+      border:none;
+      transition:.2s ease;
+      cursor:pointer;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:999px;
+      font-size:.98rem;
+      font-weight:600;
+      box-shadow:var(--shadow);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--accent), var(--accent-2));
+      color:#fff;
+    }
+
+    .btn-secondary{
+      background:var(--card);
+      border:1px solid var(--line);
+      color:var(--text);
+    }
+
+    .btn:hover,
+    .theme-toggle:hover,
+    .menu-toggle:hover{
+      transform:translateY(-2px);
+    }
+
+    .theme-toggle,
+    .menu-toggle{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--card);
+      color:var(--text);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      font-size:1.1rem;
+    }
+
+    .menu-toggle{
+      display:none;
+    }
+
+    .mobile-menu{
+      display:none;
+      padding:0 0 18px;
+    }
+
+    .mobile-menu.open{
+      display:block;
+    }
+
+    .mobile-menu-inner{
+      border:1px solid var(--line);
+      background:var(--card);
+      box-shadow:var(--shadow);
+      border-radius:24px;
+      padding:16px;
+    }
+
+    .mobile-links{
+      display:grid;
+      gap:8px;
+      margin-bottom:14px;
+    }
+
+    .mobile-links a{
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.24);
+      border:1px solid var(--line);
+      color:var(--text);
+    }
+
+    body.dark .mobile-links a{
+      background:rgba(255,255,255,.03);
+    }
+
+    .mobile-actions{
+      display:grid;
+      gap:10px;
+    }
+
+    .hero{
+      padding:56px 0 34px;
+    }
+
+    .hero-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .hero-copy{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:34px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      align-self:start;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.34);
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .hero-copy h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.4rem, 5.6vw, 4.8rem);
+      line-height:.96;
+      letter-spacing:-.05em;
+    }
+
+    .hero-copy p{
+      margin:0 0 24px;
+      font-size:1.05rem;
+      line-height:1.74;
+      color:var(--muted);
+      max-width:620px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hero-visual{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-circle{
+      width:min(100%, 520px);
+      aspect-ratio:1/1;
+      border-radius:50%;
+      overflow:hidden;
+      padding:16px;
+      background:
+        radial-gradient(circle at center, rgba(255,255,255,.42), rgba(255,255,255,.08)),
+        var(--bg-soft);
+      border:1px solid var(--line);
+      box-shadow:0 24px 60px rgba(80,56,45,.16);
+      position:relative;
+    }
+
+    .hero-circle::before{
+      content:"";
+      position:absolute;
+      inset:10px;
+      border:1px solid rgba(255,255,255,.45);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .hero-circle img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+      border-radius:50%;
+    }
+
+    .quick-info{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .quick-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .quick-card strong{
+      display:block;
+      font-size:1.16rem;
+      letter-spacing:-.02em;
+      margin-bottom:6px;
+    }
+
+    .quick-card span{
+      display:block;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:.94rem;
+    }
+
+    .section{
+      padding:84px 0;
+    }
+
+    .section-head{
+      margin-bottom:28px;
+    }
+
+    .section-title{
+      margin:16px 0 10px;
+      font-size:clamp(2rem, 4vw, 3.2rem);
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+
+    .section-text{
+      margin:0;
+      max-width:760px;
+      color:var(--muted);
+      line-height:1.76;
+      font-size:1.02rem;
+    }
+
+    .about-grid,
+    .services-grid,
+    .contact-grid{
+      display:grid;
+      gap:18px;
+    }
+
+    .about-grid{
+      grid-template-columns:repeat(2, 1fr);
+    }
+
+    .services-grid{
+      grid-template-columns:repeat(2, 1fr);
+    }
+
+    .contact-grid{
+      grid-template-columns:1.08fr .92fr;
+      align-items:start;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+
+    .card h3{
+      margin:0 0 12px;
+      font-size:1.18rem;
+      letter-spacing:-.02em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.74;
+    }
+
+    .service-card{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .service-card h3{
+      margin:0;
+      font-size:1.18rem;
+      letter-spacing:-.02em;
+    }
+
+    .gallery-list{
+      display:grid;
+      gap:18px;
+      margin-top:28px;
+    }
+
+    .gallery-item{
+      display:grid;
+      grid-template-columns:minmax(280px, 420px) 1fr;
+      gap:18px;
+      align-items:center;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:16px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .gallery-media{
+      width:100%;
+      min-height:260px;
+      border-radius:22px;
+      overflow:hidden;
+      background:var(--bg-soft);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px;
+    }
+
+    .gallery-media img{
+      width:100%;
+      height:100%;
+      max-height:520px;
+      object-fit:contain;
+      object-position:center;
+      border-radius:16px;
+      background:var(--bg-soft);
+    }
+
+    .gallery-copy{
+      padding:10px 8px 10px 4px;
+    }
+
+    .gallery-copy h3{
+      margin:0 0 10px;
+      font-size:1.4rem;
+      letter-spacing:-.03em;
+    }
+
+    .gallery-copy p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.78;
+      max-width:620px;
+    }
+
+    .benefits-grid{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .benefit{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px 20px;
+      box-shadow:var(--shadow);
+    }
+
+    .benefit strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:1.02rem;
+      letter-spacing:-.02em;
+    }
+
+    .benefit span{
+      display:block;
+      color:var(--muted);
+      line-height:1.68;
+      font-size:.95rem;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .contact-item strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:2px;
+    }
+
+    .cta-final{
+      text-align:center;
+      padding:32px 24px;
+      border-radius:32px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,.10)),
+        var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .cta-final h2{
+      margin:0 0 12px;
+      font-size:clamp(2rem, 4.5vw, 3.2rem);
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+
+    .cta-final p{
+      margin:0 auto 22px;
+      color:var(--muted);
+      line-height:1.76;
+      max-width:760px;
+    }
+
+    .site-footer{
+      padding:28px 0 110px;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-brand a{
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:60;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#25D366;
+      box-shadow:0 14px 30px rgba(37,211,102,.28);
+      transition:.2s ease;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-2px) scale(1.02);
+    }
+
+    .whatsapp-float img{
+      width:30px;
+      height:30px;
+      object-fit:contain;
+    }
+
+    @media (max-width: 1080px){
+      .hero-wrap,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .quick-info,
+      .benefits-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .gallery-item{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 860px){
+      .desktop-nav{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:grid;
+      }
+
+      .about-grid,
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding:34px 0 26px;
+      }
+
+      .hero-copy{
+        padding:26px 20px;
+      }
+
+      .hero-circle{
+        width:min(100%, 380px);
+      }
+    }
+
+    @media (max-width: 720px){
+      .container{
+        width:min(100% - 20px, 1120px);
+      }
+
+      .site-header{
+        min-height:74px;
+      }
+
+      .nav{
+        min-height:74px;
+      }
+
+      .brand-logo{
+        width:48px;
+        height:48px;
+        min-width:48px;
+      }
+
+      .brand-copy strong{
+        font-size:.96rem;
+      }
+
+      .brand-copy span{
+        font-size:.86rem;
+      }
+
+      .section{
+        padding:68px 0;
+      }
+
+      .hero-copy h1{
+        font-size:clamp(2.1rem, 9vw, 3rem);
+      }
+
+      .hero-copy p,
+      .section-text,
+      .gallery-copy p,
+      .card p{
+        font-size:.98rem;
+      }
+
+      .hero-actions,
+      .mobile-actions{
+        grid-template-columns:1fr;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .quick-info,
+      .benefits-grid{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-item{
+        padding:12px;
+        border-radius:24px;
+      }
+
+      .gallery-media{
+        min-height:220px;
+        padding:10px;
+      }
+
+      .gallery-copy{
+        padding:4px 4px 8px;
+      }
+
+      .gallery-copy h3{
+        font-size:1.22rem;
+      }
+
+      .cta-final{
+        padding:26px 18px;
+      }
+
+      .site-footer{
+        padding-bottom:104px;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .whatsapp-float{
+        width:54px;
+        height:54px;
+        right:14px;
+        bottom:18px;
+      }
+
+      .whatsapp-float img{
+        width:28px;
+        height:28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        <div class="brand-logo">
+          <img src="https://iili.io/qziu1cv" alt="Logo Fanny Marquez" />
+        </div>
+        <div class="brand-copy">
+          <strong>Fanny Marquez</strong>
+          <span>Estética facial</span>
+        </div>
+      </a>
+
+      <div class="desktop-nav">
+        <nav class="nav-links">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#tratamientos">Tratamientos</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggleDesktop" aria-label="Cambiar tema">◐</button>
+        <a class="btn btn-secondary" href="#galeria">Ver resultados</a>
+        <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Solicitar turno</a>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="theme-toggle" id="themeToggleMobile" aria-label="Cambiar tema">◐</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+
+    <div class="container mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <nav class="mobile-links">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#tratamientos">Tratamientos</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="mobile-actions">
+          <a class="btn btn-secondary" href="#galeria">Ver resultados</a>
+          <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Solicitar turno</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-copy">
+          <span class="eyebrow">Dermatocosmiatra | Especialista en piel</span>
+          <h1>Cuidado facial profesional con un enfoque elegante, natural y personalizado</h1>
+          <p>
+            Una propuesta orientada al rejuvenecimiento facial, la armonía del rostro y el cuidado profundo de la piel,
+            con tratamientos pensados para realzar la belleza natural de cada persona.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
+            <a class="btn btn-secondary" href="#tratamientos">Ver tratamientos</a>
+          </div>
+
+          <div class="quick-info">
+            <div class="quick-card">
+              <strong>📍 Córdoba</strong>
+              <span>Atención con contacto directo y ágil</span>
+            </div>
+            <div class="quick-card">
+              <strong>📲 Turnos</strong>
+              <span>3512436879</span>
+            </div>
+            <div class="quick-card">
+              <strong>Naturalidad</strong>
+              <span>Resultados delicados y armónicos</span>
+            </div>
+            <div class="quick-card">
+              <strong>Profesionalismo</strong>
+              <span>Imagen clara y atención personalizada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-circle">
+            <img src="https://iili.io/qzLkmiP.png" alt="Imagen principal de Fanny Marquez" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Sobre el espacio</span>
+          <h2 class="section-title">Una atención pensada para cuidar, revitalizar y acompañar cada tipo de piel</h2>
+          <p class="section-text">
+            La web está planteada para transmitir confianza desde el primer vistazo, mostrar el enfoque profesional del servicio
+            y facilitar que cada persona pueda conocer los tratamientos y reservar de manera simple.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="card">
+            <h3>Enfoque profesional</h3>
+            <p>
+              Tratamientos faciales orientados a mejorar la textura, el aspecto y la luminosidad del rostro, cuidando siempre una estética natural y equilibrada.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Atención cercana</h3>
+            <p>
+              Un espacio pensado para que la experiencia sea clara, prolija y cómoda, desde la primera consulta hasta la coordinación del turno por WhatsApp.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tratamientos">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Tratamientos</span>
+          <h2 class="section-title">Servicios faciales presentados de forma clara, elegante y profesional</h2>
+          <p class="section-text">
+            Una estructura simple que ayuda a explicar el beneficio de cada tratamiento sin recargar la web y manteniendo una imagen premium.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card service-card">
+            <h3>Limpieza facial profunda</h3>
+            <p>
+              Ideal para remover impurezas, renovar la piel y aportar una sensación de frescura y prolijidad visible en el rostro.
+            </p>
+          </article>
+
+          <article class="card service-card">
+            <h3>Mesoterapia facial</h3>
+            <p>
+              Un tratamiento pensado para revitalizar la piel y acompañar una mejora sutil en textura, hidratación y luminosidad.
+            </p>
+          </article>
+
+          <article class="card service-card">
+            <h3>Full Face</h3>
+            <p>
+              Un abordaje integral que busca armonizar el rostro de forma personalizada, logrando una imagen más descansada y rejuvenecida.
+            </p>
+          </article>
+
+          <article class="card service-card">
+            <h3>Botox y antiage</h3>
+            <p>
+              Procedimientos orientados a suavizar líneas de expresión y aportar un aspecto más fresco sin perder naturalidad.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Galería</span>
+          <h2 class="section-title">Resultados y contenido visual presentados uno detrás del otro</h2>
+          <p class="section-text">
+            La galería se muestra en formato vertical y ordenado, para que en móviles se vea limpia, fluida y sin perder protagonismo visual.
+          </p>
+        </div>
+
+        <div class="gallery-list">
+          <article class="gallery-item">
+            <div class="gallery-media">
+              <img src="https://iili.io/qziu1cv" alt="Resultado estético facial 1" />
+            </div>
+            <div class="gallery-copy">
+              <h3>Resultado facial</h3>
+              <p>
+                Una mejora sutil y armónica que ayuda a realzar el aspecto general del rostro, manteniendo una imagen natural y cuidada.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <div class="gallery-media">
+              <img src="https://iili.io/qziuXtt" alt="Resultado estético facial 2" />
+            </div>
+            <div class="gallery-copy">
+              <h3>Cuidado y renovación</h3>
+              <p>
+                Un trabajo orientado a refrescar la apariencia de la piel y aportar una sensación de mayor uniformidad, luz y prolijidad.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <div class="gallery-media">
+              <img src="https://iili.io/qIHaihB.png" alt="Mesoterapia facial antes y después" />
+            </div>
+            <div class="gallery-copy">
+              <h3>Mesoterapia facial</h3>
+              <p>
+                Tratamiento orientado a revitalizar la piel desde adentro, ayudando a mejorar su frescura, textura y luminosidad con un resultado delicado y visible.
+              </p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <div class="gallery-media">
+              <img src="https://iili.io/qIHU7p4.png" alt="Full Face antes y después" />
+            </div>
+            <div class="gallery-copy">
+              <h3>Full Face</h3>
+              <p>
+                Un enfoque integral que acompaña el rejuvenecimiento del rostro de forma personalizada, buscando equilibrio, suavidad y una expresión natural.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Por qué elegir este espacio</span>
+          <h2 class="section-title">Una web hecha para generar confianza y facilitar consultas reales</h2>
+          <p class="section-text">
+            El sitio no está pensado solo para verse lindo, sino para presentar bien el servicio, transmitir seriedad y convertir visitas en turnos.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit">
+            <strong>Atención personalizada</strong>
+            <span>Cada consulta puede orientarse según el tipo de piel y el objetivo de cada persona.</span>
+          </div>
+          <div class="benefit">
+            <strong>Imagen profesional</strong>
+            <span>Una presencia web prolija ayuda a reforzar confianza desde el primer contacto.</span>
+          </div>
+          <div class="benefit">
+            <strong>Resultados visibles</strong>
+            <span>La galería aporta respaldo visual y mejora la percepción del trabajo realizado.</span>
+          </div>
+          <div class="benefit">
+            <strong>Contacto simple</strong>
+            <span>Todo conduce a una acción clara: escribir por WhatsApp y avanzar rápido al turno.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Contacto</span>
+          <h2 class="section-title">Información clara para reservar de forma simple y directa</h2>
+          <p class="section-text">
+            Una sección breve, elegante y funcional para que quien llegue al sitio pueda avanzar rápido a la consulta.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="card">
+            <h3>Datos principales</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <div>📍</div>
+                <div>
+                  <strong>Córdoba</strong>
+                  Atención y consultas con contacto directo.
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div>📲</div>
+                <div>
+                  <strong>Turnos 3512436879</strong>
+                  Respuesta rápida por WhatsApp para coordinar.
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div>✨</div>
+                <div>
+                  <strong>Especialidad</strong>
+                  Dermatocosmiatría, rejuvenecimiento facial, mesoterapia, limpieza profunda y tratamientos antiage.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Reservá tu turno</h3>
+            <p>
+              Si querés consultar por tratamientos, disponibilidad o una primera orientación, podés escribir directamente por WhatsApp.
+            </p>
+            <div style="margin-top:18px;">
+              <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-final">
+          <h2>Una presencia digital elegante para acompañar la calidad del servicio</h2>
+          <p>
+            Esta landing está pensada para mostrar el trabajo de forma clara, elevar la imagen profesional y facilitar que nuevas personas se animen a consultar y reservar.
+          </p>
+          <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer">Pedir turno ahora</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>Fanny Marquez | Estética facial</div>
+      <div class="footer-brand">Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20consultar%20por%20un%20turno." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <img src="https://iili.io/qBZhqGf.md.png" alt="WhatsApp" />
+  </a>
+
+  <script>
+    const body = document.body;
+    const themeToggleDesktop = document.getElementById("themeToggleDesktop");
+    const themeToggleMobile = document.getElementById("themeToggleMobile");
+    const savedTheme = localStorage.getItem("fanny-theme");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    if (savedTheme === "dark") {
+      body.classList.add("dark");
+    }
+
+    function toggleTheme() {
+      body.classList.toggle("dark");
+      localStorage.setItem("fanny-theme", body.classList.contains("dark") ? "dark" : "light");
+    }
+
+    if (themeToggleDesktop) themeToggleDesktop.addEventListener("click", toggleTheme);
+    if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuToggle.textContent = mobileMenu.classList.contains("open") ? "✕" : "☰";
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 860) {
+        mobileMenu.classList.remove("open");
+        menuToggle.textContent = "☰";
+      }
+    });
+  </script>
+</body>
+</html>
