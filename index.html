@@ -281,19 +281,18 @@
     }
 
     .hero{
-      padding:24px 0 38px;
+      padding:0 0 38px;
     }
 
     .hero-banner{
       position:relative;
-      min-height:640px;
-      border-radius:34px;
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      min-height:700px;
       overflow:hidden;
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,.14);
       background:url("https://iili.io/qIxo8hJ.jpg") center center / cover no-repeat;
       display:flex;
-      align-items:flex-end;
+      align-items:center;
     }
 
     .hero-banner::before{
@@ -301,43 +300,30 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(180deg, rgba(20,16,14,.16) 0%, rgba(20,16,14,.28) 28%, rgba(20,16,14,.54) 100%);
+        linear-gradient(90deg, rgba(20,16,14,.58) 0%, rgba(20,16,14,.34) 42%, rgba(20,16,14,.20) 72%, rgba(20,16,14,.14) 100%);
       pointer-events:none;
     }
 
     body.dark .hero-banner::before{
       background:
-        linear-gradient(180deg, rgba(8,7,7,.16) 0%, rgba(8,7,7,.28) 28%, rgba(8,7,7,.58) 100%);
+        linear-gradient(90deg, rgba(8,7,7,.64) 0%, rgba(8,7,7,.38) 42%, rgba(8,7,7,.22) 72%, rgba(8,7,7,.14) 100%);
     }
 
-    .hero-content{
+    .hero-layout{
       position:relative;
       z-index:2;
-      width:100%;
-      padding:34px;
+      width:min(1240px, calc(100% - 32px));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:24px;
+      padding:46px 0;
+    }
+
+    .hero-text{
+      max-width:700px;
       color:#fff;
-    }
-
-    .hero-logo{
-      width:110px;
-      height:110px;
-      border-radius:50%;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.35);
-      background:rgba(255,255,255,.14);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      box-shadow:0 18px 40px rgba(0,0,0,.20);
-      padding:8px;
-      margin-bottom:20px;
-    }
-
-    .hero-logo img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      border-radius:50%;
-      background:rgba(255,255,255,.06);
     }
 
     .eyebrow{
@@ -354,26 +340,21 @@
       -webkit-backdrop-filter:blur(8px);
     }
 
-    .hero-copy{
-      max-width:740px;
-      margin-top:16px;
-    }
-
-    .hero-copy h1{
-      margin:0 0 14px;
-      font-size:clamp(2.3rem, 5.4vw, 4.8rem);
-      line-height:.96;
+    .hero-text h1{
+      margin:18px 0 14px;
+      font-size:clamp(2.4rem, 5.4vw, 5rem);
+      line-height:.95;
       letter-spacing:-.05em;
       color:#fff;
       text-shadow:0 6px 22px rgba(0,0,0,.20);
     }
 
-    .hero-copy p{
+    .hero-text p{
       margin:0 0 24px;
       font-size:1.06rem;
       line-height:1.76;
       color:rgba(255,255,255,.92);
-      max-width:680px;
+      max-width:650px;
       text-shadow:0 4px 18px rgba(0,0,0,.18);
     }
 
@@ -381,6 +362,7 @@
       display:flex;
       gap:12px;
       flex-wrap:wrap;
+      margin-bottom:26px;
     }
 
     .hero-actions .btn-secondary{
@@ -395,7 +377,6 @@
       display:grid;
       grid-template-columns:repeat(4, 1fr);
       gap:14px;
-      margin-top:26px;
     }
 
     .quick-card{
@@ -422,6 +403,56 @@
       color:rgba(255,255,255,.90);
       line-height:1.55;
       font-size:.94rem;
+    }
+
+    .hero-logo-wrap{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+    }
+
+    .hero-logo{
+      width:min(430px, 100%);
+      aspect-ratio:1/1;
+      border-radius:50%;
+      overflow:hidden;
+      padding:18px;
+      border:1px solid rgba(255,255,255,.26);
+      background:rgba(255,255,255,.12);
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
+      box-shadow:0 30px 70px rgba(0,0,0,.18);
+    }
+
+    .hero-logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
+    }
+
+    .mobile-hero-logo{
+      display:none;
+      width:min(260px, 78%);
+      aspect-ratio:1/1;
+      margin:22px auto 0;
+      border-radius:50%;
+      overflow:hidden;
+      padding:14px;
+      border:1px solid rgba(255,255,255,.26);
+      background:rgba(255,255,255,.12);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      box-shadow:0 18px 42px rgba(0,0,0,.18);
+    }
+
+    .mobile-hero-logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:50%;
+      background:rgba(255,255,255,.08);
     }
 
     .section{
@@ -679,6 +710,7 @@
     }
 
     @media (max-width: 1080px){
+      .hero-layout,
       .contact-grid,
       .gallery-item{
         grid-template-columns:1fr;
@@ -687,6 +719,14 @@
       .quick-info,
       .benefits-grid{
         grid-template-columns:repeat(2, 1fr);
+      }
+
+      .hero-logo-wrap{
+        justify-content:center;
+      }
+
+      .hero-logo{
+        width:min(360px, 74%);
       }
     }
 
@@ -710,21 +750,44 @@
       }
 
       .hero{
-        padding:14px 0 24px;
+        padding:0 0 24px;
       }
 
       .hero-banner{
-        min-height:560px;
+        min-height:720px;
+        align-items:flex-start;
       }
 
-      .hero-content{
-        padding:24px 18px;
+      .hero-layout{
+        width:min(100% - 20px, 1120px);
+        gap:0;
+        padding:28px 0 36px;
       }
 
-      .hero-logo{
-        width:92px;
-        height:92px;
-        margin-bottom:16px;
+      .hero-banner::before{
+        background:
+          linear-gradient(180deg, rgba(20,16,14,.50) 0%, rgba(20,16,14,.34) 38%, rgba(20,16,14,.44) 100%);
+      }
+
+      body.dark .hero-banner::before{
+        background:
+          linear-gradient(180deg, rgba(8,7,7,.58) 0%, rgba(8,7,7,.38) 38%, rgba(8,7,7,.48) 100%);
+      }
+
+      .hero-text{
+        max-width:none;
+      }
+
+      .hero-logo-wrap{
+        display:none;
+      }
+
+      .quick-info{
+        display:none;
+      }
+
+      .mobile-hero-logo{
+        display:block;
       }
     }
 
@@ -760,16 +823,20 @@
       }
 
       .hero-banner{
-        min-height:520px;
-        border-radius:28px;
+        min-height:700px;
         background-position:center center;
       }
 
-      .hero-copy h1{
-        font-size:clamp(2rem, 9vw, 3rem);
+      .hero-layout{
+        padding:24px 0 34px;
       }
 
-      .hero-copy p,
+      .hero-text h1{
+        font-size:clamp(2.1rem, 9vw, 3.2rem);
+        margin-top:14px;
+      }
+
+      .hero-text p,
       .section-text,
       .gallery-copy p,
       .card p{
@@ -785,7 +852,6 @@
         width:100%;
       }
 
-      .quick-info,
       .benefits-grid{
         grid-template-columns:1fr;
       }
@@ -884,21 +950,14 @@
 
   <main id="inicio">
     <section class="hero">
-      <div class="container">
-        <div class="hero-banner">
-          <div class="hero-content">
-            <div class="hero-logo">
-              <img src="https://iili.io/qIqMwV1.png" alt="Logo Fanny Marquez" />
-            </div>
-
+      <div class="hero-banner">
+        <div class="hero-layout">
+          <div class="hero-text">
             <span class="eyebrow">Dermatocosmiatra | Especialista en piel</span>
-
-            <div class="hero-copy">
-              <h1>Cuidado facial profesional con un enfoque elegante, natural y personalizado</h1>
-              <p>
-                Tratamientos orientados a revitalizar la piel, armonizar el rostro y acompañar cada necesidad con atención delicada y resultados sutiles.
-              </p>
-            </div>
+            <h1>Cuidado facial profesional con un enfoque elegante, natural y personalizado</h1>
+            <p>
+              Tratamientos orientados a revitalizar la piel, armonizar el rostro y acompañar cada necesidad con atención delicada y resultados sutiles.
+            </p>
 
             <div class="hero-actions">
               <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
@@ -923,6 +982,16 @@
                 <span>Cuidado pensado para cada piel</span>
               </div>
             </div>
+
+            <div class="mobile-hero-logo">
+              <img src="https://iili.io/qIqMwV1.png" alt="Logo Fanny Marquez" />
+            </div>
+          </div>
+
+          <div class="hero-logo-wrap">
+            <div class="hero-logo">
+              <img src="https://iili.io/qIqMwV1.png" alt="Logo Fanny Marquez" />
+            </div>
           </div>
         </div>
       </div>
@@ -932,9 +1001,9 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow" style="color:var(--text); background:var(--card); border-color:var(--line);">Sobre mí</span>
-          <h2 class="section-title">Una atención profesional orientada al cuidado, la frescura y la armonía del rostro</h2>
+          <h2 class="section-title">Fanny Marquez</h2>
           <p class="section-text">
-            Cada tratamiento está pensado para acompañar las necesidades de la piel con una mirada personalizada, sutil y enfocada en realzar la belleza natural.
+            Atención profesional orientada al cuidado, la frescura y la armonía del rostro, con una mirada personalizada y sutil enfocada en realzar la belleza natural.
           </p>
         </div>
 
