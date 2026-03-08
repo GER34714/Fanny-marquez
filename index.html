@@ -288,25 +288,23 @@
       position:relative;
       width:100vw;
       margin-left:calc(50% - 50vw);
-      min-height:700px;
+      min-height:720px;
       overflow:hidden;
       background:url("https://iili.io/qIxo8hJ.jpg") center center / cover no-repeat;
       display:flex;
-      align-items:center;
+      align-items:flex-end;
     }
 
     .hero-banner::before{
       content:"";
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(90deg, rgba(20,16,14,.58) 0%, rgba(20,16,14,.34) 42%, rgba(20,16,14,.20) 72%, rgba(20,16,14,.14) 100%);
+      background:linear-gradient(90deg, rgba(20,16,14,.52) 0%, rgba(20,16,14,.22) 46%, rgba(20,16,14,.10) 100%);
       pointer-events:none;
     }
 
     body.dark .hero-banner::before{
-      background:
-        linear-gradient(90deg, rgba(8,7,7,.64) 0%, rgba(8,7,7,.38) 42%, rgba(8,7,7,.22) 72%, rgba(8,7,7,.14) 100%);
+      background:linear-gradient(90deg, rgba(8,7,7,.60) 0%, rgba(8,7,7,.26) 46%, rgba(8,7,7,.12) 100%);
     }
 
     .hero-layout{
@@ -315,15 +313,16 @@
       width:min(1240px, calc(100% - 32px));
       margin:0 auto;
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      align-items:center;
+      grid-template-columns:1.08fr .92fr;
+      align-items:end;
       gap:24px;
-      padding:46px 0;
+      padding:110px 0 46px;
     }
 
     .hero-text{
-      max-width:700px;
+      max-width:720px;
       color:#fff;
+      align-self:end;
     }
 
     .eyebrow{
@@ -332,12 +331,11 @@
       gap:8px;
       padding:10px 16px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.26);
-      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.30);
+      background:transparent;
       color:#fff;
       font-size:.92rem;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      box-shadow:none;
     }
 
     .hero-text h1{
@@ -353,7 +351,7 @@
       margin:0 0 24px;
       font-size:1.06rem;
       line-height:1.76;
-      color:rgba(255,255,255,.92);
+      color:rgba(255,255,255,.94);
       max-width:650px;
       text-shadow:0 4px 18px rgba(0,0,0,.18);
     }
@@ -366,11 +364,12 @@
     }
 
     .hero-actions .btn-secondary{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.28);
+      background:transparent;
+      border:1px solid rgba(255,255,255,.38);
       color:#fff;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      box-shadow:none;
+      backdrop-filter:none;
+      -webkit-backdrop-filter:none;
     }
 
     .quick-info{
@@ -380,14 +379,12 @@
     }
 
     .quick-card{
-      background:rgba(255,255,255,.12);
-      border:1px solid rgba(255,255,255,.22);
+      background:transparent;
+      border:1px solid rgba(255,255,255,.24);
       border-radius:22px;
       padding:18px;
-      box-shadow:0 14px 34px rgba(0,0,0,.12);
+      box-shadow:none;
       text-align:center;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
       color:#fff;
     }
 
@@ -400,7 +397,7 @@
 
     .quick-card span{
       display:block;
-      color:rgba(255,255,255,.90);
+      color:rgba(255,255,255,.92);
       line-height:1.55;
       font-size:.94rem;
     }
@@ -408,20 +405,19 @@
     .hero-logo-wrap{
       display:flex;
       justify-content:flex-end;
-      align-items:center;
+      align-items:end;
+      align-self:end;
     }
 
     .hero-logo{
-      width:min(430px, 100%);
+      width:min(470px, 100%);
       aspect-ratio:1/1;
       border-radius:50%;
       overflow:hidden;
       padding:18px;
-      border:1px solid rgba(255,255,255,.26);
-      background:rgba(255,255,255,.12);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      box-shadow:0 30px 70px rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.18);
+      background:transparent;
+      box-shadow:none;
     }
 
     .hero-logo img{
@@ -429,22 +425,20 @@
       height:100%;
       object-fit:contain;
       border-radius:50%;
-      background:rgba(255,255,255,.08);
+      background:transparent;
     }
 
     .mobile-hero-logo{
       display:none;
       width:min(260px, 78%);
       aspect-ratio:1/1;
-      margin:22px auto 0;
+      margin:90px auto -26px;
       border-radius:50%;
       overflow:hidden;
       padding:14px;
-      border:1px solid rgba(255,255,255,.26);
-      background:rgba(255,255,255,.12);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
-      box-shadow:0 18px 42px rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.20);
+      background:transparent;
+      box-shadow:none;
     }
 
     .mobile-hero-logo img{
@@ -452,7 +446,7 @@
       height:100%;
       object-fit:contain;
       border-radius:50%;
-      background:rgba(255,255,255,.08);
+      background:transparent;
     }
 
     .section{
@@ -754,24 +748,22 @@
       }
 
       .hero-banner{
-        min-height:720px;
+        min-height:760px;
         align-items:flex-start;
       }
 
       .hero-layout{
         width:min(100% - 20px, 1120px);
         gap:0;
-        padding:28px 0 36px;
+        padding:24px 0 34px;
       }
 
       .hero-banner::before{
-        background:
-          linear-gradient(180deg, rgba(20,16,14,.50) 0%, rgba(20,16,14,.34) 38%, rgba(20,16,14,.44) 100%);
+        background:linear-gradient(180deg, rgba(20,16,14,.48) 0%, rgba(20,16,14,.28) 34%, rgba(20,16,14,.44) 100%);
       }
 
       body.dark .hero-banner::before{
-        background:
-          linear-gradient(180deg, rgba(8,7,7,.58) 0%, rgba(8,7,7,.38) 38%, rgba(8,7,7,.48) 100%);
+        background:linear-gradient(180deg, rgba(8,7,7,.56) 0%, rgba(8,7,7,.30) 34%, rgba(8,7,7,.48) 100%);
       }
 
       .hero-text{
@@ -823,12 +815,12 @@
       }
 
       .hero-banner{
-        min-height:700px;
+        min-height:720px;
         background-position:center center;
       }
 
       .hero-layout{
-        padding:24px 0 34px;
+        padding:22px 0 32px;
       }
 
       .hero-text h1{
@@ -854,6 +846,11 @@
 
       .benefits-grid{
         grid-template-columns:1fr;
+      }
+
+      .mobile-hero-logo{
+        width:min(250px, 80%);
+        margin:110px auto -34px;
       }
 
       .gallery-item{
