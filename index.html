@@ -23,17 +23,17 @@
       --bg-soft:#fcf8f5;
       --card:rgba(255,255,255,.84);
       --text:#2f2927;
-      --muted:#6f6762;
+      --muted:#554d49;
       --line:#e8ddd6;
       --accent:#b89586;
       --accent-2:#d9c3b7;
       --shadow:0 14px 34px rgba(80,56,45,.12);
       --radius:28px;
       --header-h:82px;
-      --hero-overlay:rgba(0,0,0,.16);
-      --hero-chip-bg:rgba(255,255,255,.86);
-      --hero-chip-text:#241f1d;
-      --footer-accent:#8f4dff;
+      --hero-overlay:rgba(0,0,0,.18);
+      --hero-chip-bg:rgba(255,255,255,.82);
+      --hero-chip-text:#231f1d;
+      --footer-accent:#7f35ff;
     }
 
     body.dark{
@@ -41,15 +41,15 @@
       --bg-soft:#211a18;
       --card:rgba(36,29,27,.84);
       --text:#f3ece8;
-      --muted:#c8b9b1;
+      --muted:#e3d8d2;
       --line:#3a2f2b;
       --accent:#d7b6a3;
       --accent-2:#8f7367;
       --shadow:0 18px 42px rgba(0,0,0,.34);
       --hero-overlay:rgba(0,0,0,.28);
-      --hero-chip-bg:rgba(20,16,14,.62);
+      --hero-chip-bg:rgba(24,19,17,.62);
       --hero-chip-text:#fff;
-      --footer-accent:#7cf7c5;
+      --footer-accent:#82ffd2;
     }
 
     *{box-sizing:border-box}
@@ -312,7 +312,7 @@
       grid-template-columns:1.02fr .98fr;
       align-items:center;
       gap:24px;
-      padding:70px 0 50px;
+      padding:70px 0 104px;
     }
 
     .hero-copy{
@@ -342,7 +342,7 @@
       line-height:.96;
       letter-spacing:-.05em;
       color:#fff;
-      text-shadow:0 10px 26px rgba(0,0,0,.40);
+      text-shadow:0 10px 26px rgba(0,0,0,.42);
     }
 
     .hero-copy p{
@@ -351,7 +351,7 @@
       line-height:1.74;
       color:#fff;
       max-width:580px;
-      text-shadow:0 8px 22px rgba(0,0,0,.42);
+      text-shadow:0 8px 22px rgba(0,0,0,.46);
     }
 
     .hero-logo-wrap{
@@ -392,8 +392,12 @@
     }
 
     .hero-chips{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:18px;
+      z-index:3;
       width:min(1240px, calc(100% - 32px));
-      margin:16px auto 0;
       display:grid;
       grid-template-columns:repeat(4, 1fr);
       gap:14px;
@@ -435,7 +439,10 @@
       display:none;
       width:min(230px, 76%);
       aspect-ratio:1/1;
-      margin:0 auto 20px;
+      position:absolute;
+      right:20px;
+      top:24px;
+      z-index:3;
       border-radius:50%;
       overflow:hidden;
       padding:8px;
@@ -473,6 +480,11 @@
       color:var(--muted);
       line-height:1.76;
       font-size:1.02rem;
+      text-shadow:0 1px 0 rgba(255,255,255,.14);
+    }
+
+    body.dark .section-text{
+      text-shadow:0 1px 0 rgba(0,0,0,.16);
     }
 
     .about-grid,
@@ -515,6 +527,11 @@
       margin:0;
       color:var(--muted);
       line-height:1.74;
+      text-shadow:0 1px 0 rgba(255,255,255,.14);
+    }
+
+    body.dark .card p{
+      text-shadow:0 1px 0 rgba(0,0,0,.16);
     }
 
     .service-card{
@@ -585,6 +602,11 @@
       color:var(--muted);
       line-height:1.78;
       max-width:620px;
+      text-shadow:0 1px 0 rgba(255,255,255,.14);
+    }
+
+    body.dark .gallery-copy p{
+      text-shadow:0 1px 0 rgba(0,0,0,.16);
     }
 
     .benefits-grid{
@@ -614,6 +636,11 @@
       color:var(--muted);
       line-height:1.68;
       font-size:.95rem;
+      text-shadow:0 1px 0 rgba(255,255,255,.14);
+    }
+
+    body.dark .benefit span{
+      text-shadow:0 1px 0 rgba(0,0,0,.16);
     }
 
     .contact-list{
@@ -659,6 +686,11 @@
       color:var(--muted);
       line-height:1.76;
       max-width:760px;
+      text-shadow:0 1px 0 rgba(255,255,255,.14);
+    }
+
+    body.dark .cta-final p{
+      text-shadow:0 1px 0 rgba(0,0,0,.16);
     }
 
     .site-footer{
@@ -679,13 +711,13 @@
     .footer-brand a{
       color:var(--footer-accent);
       font-weight:800;
-      text-shadow:0 0 12px rgba(0,0,0,.18);
+      text-shadow:0 0 14px rgba(0,0,0,.22);
     }
 
     .whatsapp-float{
       position:fixed;
       right:18px;
-      bottom:18px;
+      bottom:96px;
       z-index:60;
       width:58px;
       height:58px;
@@ -763,7 +795,7 @@
       .hero-inner{
         width:min(100% - 20px, 1120px);
         min-height:520px;
-        padding:14px 0 24px;
+        padding:18px 0 24px;
         gap:0;
         align-items:start;
       }
@@ -776,6 +808,8 @@
         max-width:none;
         align-self:start;
         padding-top:0;
+        position:relative;
+        z-index:2;
       }
 
       .hero-copy .eyebrow{
@@ -801,9 +835,6 @@
 
       .mobile-hero-logo{
         display:block;
-        position:relative;
-        z-index:3;
-        margin:-170px auto 20px;
       }
     }
 
@@ -869,7 +900,8 @@
 
       .mobile-hero-logo{
         width:min(220px, 74%);
-        margin:-150px auto 20px;
+        top:18px;
+        right:10px;
       }
 
       .gallery-item{
@@ -911,7 +943,7 @@
         width:54px;
         height:54px;
         right:14px;
-        bottom:18px;
+        bottom:88px;
       }
 
       .whatsapp-float img{
@@ -971,6 +1003,10 @@
   <main id="inicio">
     <section class="hero">
       <div class="hero-banner">
+        <div class="mobile-hero-logo">
+          <img src="https://iili.io/qIqMwV1.png" alt="Logo Fanny Marquez" />
+        </div>
+
         <div class="hero-inner">
           <div class="hero-copy">
             <div class="eyebrow">Dermatocosmiatra | Especialista en piel</div>
@@ -986,39 +1022,35 @@
             </div>
           </div>
         </div>
+
+        <div class="hero-chips">
+          <div class="quick-card">
+            <strong>📍 Córdoba</strong>
+            <span>Atención con contacto directo y ágil</span>
+          </div>
+          <div class="quick-card">
+            <strong>📲 Turnos</strong>
+            <span>3512436879</span>
+          </div>
+          <div class="quick-card">
+            <strong>Naturalidad</strong>
+            <span>Resultados delicados y armónicos</span>
+          </div>
+          <div class="quick-card">
+            <strong>Bienestar</strong>
+            <span>Cuidado pensado para cada piel</span>
+          </div>
+        </div>
       </div>
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
         <a class="btn btn-secondary" href="#tratamientos">Ver tratamientos</a>
       </div>
-
-      <div class="hero-chips">
-        <div class="quick-card">
-          <strong>📍 Córdoba</strong>
-          <span>Atención con contacto directo y ágil</span>
-        </div>
-        <div class="quick-card">
-          <strong>📲 Turnos</strong>
-          <span>3512436879</span>
-        </div>
-        <div class="quick-card">
-          <strong>Naturalidad</strong>
-          <span>Resultados delicados y armónicos</span>
-        </div>
-        <div class="quick-card">
-          <strong>Bienestar</strong>
-          <span>Cuidado pensado para cada piel</span>
-        </div>
-      </div>
     </section>
 
     <section class="section" id="sobre-mi">
       <div class="container">
-        <div class="mobile-hero-logo">
-          <img src="https://iili.io/qIqMwV1.png" alt="Logo Fanny Marquez" />
-        </div>
-
         <div class="section-head">
           <div style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:.92rem;">Sobre mí</div>
           <h2 class="section-title">Fanny Marquez</h2>
