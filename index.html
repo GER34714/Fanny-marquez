@@ -55,7 +55,7 @@
       color:var(--text);
       background-color:var(--bg);
       background-image:
-        linear-gradient(rgba(247,241,237,.34), rgba(247,241,237,.34)),
+        linear-gradient(rgba(247,241,237,.28), rgba(247,241,237,.28)),
         url("https://iili.io/qIxLCWx.jpg");
       background-size:cover, cover;
       background-position:center center, center top;
@@ -68,7 +68,7 @@
     body.dark{
       background-color:var(--bg);
       background-image:
-        linear-gradient(rgba(23,19,18,.38), rgba(23,19,18,.38)),
+        linear-gradient(rgba(23,19,18,.34), rgba(23,19,18,.34)),
         url("https://iili.io/qIxeKCu.jpg");
       background-size:cover, cover;
       background-position:center center, center top;
@@ -188,7 +188,6 @@
       border:none;
       transition:.2s ease;
       cursor:pointer;
-      font-family:inherit;
     }
 
     .btn{
@@ -289,43 +288,34 @@
       position:relative;
       width:100vw;
       margin-left:calc(50% - 50vw);
-      min-height:670px;
+      min-height:720px;
       overflow:hidden;
       background:url("https://iili.io/qIxo8hJ.jpg") center center / cover no-repeat;
-      display:flex;
-      align-items:center;
     }
 
-    .hero-banner::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg, rgba(18,14,13,.18) 0%, rgba(18,14,13,.10) 38%, rgba(18,14,13,.04) 70%, rgba(18,14,13,0) 100%);
-      pointer-events:none;
-    }
-
-    body.dark .hero-banner::before{
-      background:linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.18) 38%, rgba(0,0,0,.08) 70%, rgba(0,0,0,0) 100%);
-    }
-
-    .hero-layout{
+    .hero-overlay-content{
       position:relative;
       z-index:2;
       width:min(1240px, calc(100% - 32px));
       margin:0 auto;
+      min-height:720px;
       display:grid;
       grid-template-columns:1.05fr .95fr;
-      align-items:end;
+      align-items:center;
       gap:24px;
-      padding:44px 0 54px;
-      min-height:670px;
+      padding:42px 0;
     }
 
     .hero-text{
       max-width:620px;
       color:#fff;
       align-self:end;
-      padding-bottom:8px;
+      padding-bottom:14px;
+    }
+
+    .hero-text-inner{
+      display:inline-block;
+      max-width:100%;
     }
 
     .eyebrow{
@@ -334,23 +324,20 @@
       gap:8px;
       padding:10px 16px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.22);
-      background:rgba(255,255,255,.10);
+      background:rgba(20,16,14,.26);
       color:#fff;
       font-size:.92rem;
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
       width:max-content;
       max-width:100%;
     }
 
     .hero-text h1{
       margin:18px 0 14px;
-      font-size:clamp(2.5rem, 5vw, 4.5rem);
+      font-size:clamp(2.45rem, 5vw, 4.7rem);
       line-height:1;
       letter-spacing:-.05em;
       color:#fff;
-      text-shadow:0 6px 20px rgba(0,0,0,.22);
+      text-shadow:0 6px 18px rgba(0,0,0,.22);
       max-width:720px;
     }
 
@@ -358,7 +345,7 @@
       margin:0;
       font-size:1.05rem;
       line-height:1.76;
-      color:rgba(255,255,255,.96);
+      color:rgba(255,255,255,.97);
       max-width:560px;
       text-shadow:0 4px 14px rgba(0,0,0,.18);
     }
@@ -367,20 +354,19 @@
       display:flex;
       justify-content:flex-end;
       align-items:flex-start;
-      padding-top:8px;
+      align-self:start;
+      padding-top:12px;
+      padding-right:6px;
     }
 
     .hero-logo{
-      width:min(360px, 88%);
+      width:min(350px, 88%);
       aspect-ratio:1/1;
       border-radius:50%;
       overflow:hidden;
-      padding:12px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.18);
-      box-shadow:0 22px 52px rgba(0,0,0,.14);
-      backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
+      padding:0;
+      background:transparent;
+      box-shadow:none;
     }
 
     .hero-logo img{
@@ -388,14 +374,14 @@
       height:100%;
       object-fit:contain;
       border-radius:50%;
-      background:transparent;
+      filter:drop-shadow(0 16px 34px rgba(0,0,0,.16));
     }
 
-    .hero-bottom{
-      margin-top:-6px;
+    .hero-under{
+      margin-top:18px;
     }
 
-    .hero-bottom-inner{
+    .hero-under-inner{
       display:grid;
       grid-template-columns:auto 1fr;
       gap:18px;
@@ -695,28 +681,28 @@
     }
 
     @media (max-width: 1080px){
-      .hero-layout,
+      .hero-overlay-content,
       .contact-grid,
       .gallery-item{
         grid-template-columns:1fr;
       }
 
-      .hero-layout{
+      .hero-overlay-content{
+        gap:14px;
         align-items:end;
-        gap:10px;
-        padding:40px 0 42px;
       }
 
       .hero-logo-wrap{
         justify-content:flex-end;
         align-items:flex-start;
+        padding-top:0;
       }
 
       .hero-logo{
-        width:min(280px, 56%);
+        width:min(250px, 48%);
       }
 
-      .hero-bottom-inner{
+      .hero-under-inner{
         grid-template-columns:1fr;
       }
 
@@ -750,25 +736,30 @@
       }
 
       .hero-banner{
-        min-height:680px;
-        background-position:center center;
-        align-items:flex-end;
+        min-height:660px;
+        background-position:62% center;
       }
 
-      .hero-banner::before{
-        background:linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.04) 42%, rgba(0,0,0,.26) 100%);
-      }
-
-      body.dark .hero-banner::before{
-        background:linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.08) 42%, rgba(0,0,0,.34) 100%);
-      }
-
-      .hero-layout{
+      .hero-overlay-content{
         width:min(100% - 20px, 1120px);
-        min-height:680px;
-        padding:26px 0 28px;
+        min-height:660px;
+        grid-template-columns:1fr;
         align-items:end;
-        gap:18px;
+        gap:12px;
+        padding:22px 0 26px;
+      }
+
+      .hero-logo-wrap{
+        position:absolute;
+        top:18px;
+        right:12px;
+        width:auto;
+        padding:0;
+        z-index:3;
+      }
+
+      .hero-logo{
+        width:min(160px, 34vw);
       }
 
       .hero-text{
@@ -776,29 +767,21 @@
         padding-bottom:0;
       }
 
-      .hero-text h1{
-        font-size:clamp(2.1rem, 8.2vw, 3.2rem);
+      .hero-text-inner{
         max-width:520px;
       }
 
+      .hero-text h1{
+        font-size:clamp(2rem, 8vw, 3.2rem);
+        max-width:480px;
+      }
+
       .hero-text p{
-        max-width:500px;
+        max-width:460px;
         font-size:1rem;
       }
 
-      .hero-logo-wrap{
-        justify-content:flex-end;
-        align-items:flex-start;
-        padding-top:0;
-      }
-
-      .hero-logo{
-        width:min(180px, 42vw);
-        padding:8px;
-        background:rgba(255,255,255,.05);
-      }
-
-      .hero-bottom-inner{
+      .hero-under-inner{
         grid-template-columns:1fr;
         gap:14px;
       }
@@ -849,18 +832,31 @@
       }
 
       .hero-banner{
-        min-height:650px;
-        background-position:62% center;
+        min-height:620px;
+        background-position:64% center;
       }
 
-      .hero-layout{
-        min-height:650px;
-        padding:22px 0 24px;
+      .hero-overlay-content{
+        min-height:620px;
+        padding:18px 0 20px;
+      }
+
+      .hero-logo-wrap{
+        top:14px;
+        right:8px;
+      }
+
+      .hero-logo{
+        width:min(128px, 32vw);
       }
 
       .eyebrow{
         font-size:.84rem;
         padding:9px 14px;
+      }
+
+      .hero-text{
+        padding-right:22px;
       }
 
       .hero-text h1{
@@ -872,14 +868,6 @@
       .gallery-copy p,
       .card p{
         font-size:.98rem;
-      }
-
-      .hero-logo{
-        width:min(150px, 38vw);
-      }
-
-      .hero-bottom{
-        margin-top:0;
       }
 
       .hero-chips,
@@ -986,13 +974,15 @@
   <main id="inicio">
     <section class="hero">
       <div class="hero-banner">
-        <div class="hero-layout">
+        <div class="hero-overlay-content">
           <div class="hero-text">
-            <span class="eyebrow">Dermatocosmiatra | Especialista en piel</span>
-            <h1>Cuidado facial natural y personalizado</h1>
-            <p>
-              Tratamientos orientados a revitalizar la piel, armonizar el rostro y acompañar cada necesidad con atención delicada y resultados sutiles.
-            </p>
+            <div class="hero-text-inner">
+              <span class="eyebrow">Dermatocosmiatra | Especialista en piel</span>
+              <h1>Cuidado facial natural y personalizado</h1>
+              <p>
+                Tratamientos orientados a revitalizar la piel, armonizar el rostro y acompañar cada necesidad con atención delicada y resultados sutiles.
+              </p>
+            </div>
           </div>
 
           <div class="hero-logo-wrap">
@@ -1003,8 +993,8 @@
         </div>
       </div>
 
-      <div class="container hero-bottom">
-        <div class="hero-bottom-inner">
+      <div class="container hero-under">
+        <div class="hero-under-inner">
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
             <a class="btn btn-secondary" href="#tratamientos">Ver tratamientos</a>
@@ -1035,7 +1025,7 @@
     <section class="section" id="sobre-mi">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow" style="color:var(--text); background:var(--card); border-color:var(--line);">Sobre mí</span>
+          <span class="eyebrow" style="color:var(--text); background:var(--card);">Sobre mí</span>
           <h2 class="section-title">Fanny Marquez</h2>
           <p class="section-text">
             Atención profesional orientada al cuidado, la frescura y la armonía del rostro, con una mirada personalizada y sutil enfocada en realzar la belleza natural.
@@ -1063,7 +1053,7 @@
     <section class="section" id="tratamientos">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow" style="color:var(--text); background:var(--card); border-color:var(--line);">Tratamientos</span>
+          <span class="eyebrow" style="color:var(--text); background:var(--card);">Tratamientos</span>
           <h2 class="section-title">Opciones pensadas para cuidar, revitalizar y rejuvenecer la piel</h2>
           <p class="section-text">
             Tratamientos faciales enfocados en mejorar textura, luminosidad, frescura y armonía, siempre con una mirada estética delicada.
@@ -1105,7 +1095,7 @@
     <section class="section" id="galeria">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow" style="color:var(--text); background:var(--card); border-color:var(--line);">Galería</span>
+          <span class="eyebrow" style="color:var(--text); background:var(--card);">Galería</span>
           <h2 class="section-title">Resultados que acompañan una imagen fresca, cuidada y natural</h2>
           <p class="section-text">
             Una selección de imágenes que reflejan distintas propuestas y beneficios dentro de los tratamientos faciales.
@@ -1167,7 +1157,7 @@
     <section class="section" id="beneficios">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow" style="color:var(--text); background:var(--card); border-color:var(--line);">Beneficios</span>
+          <span class="eyebrow" style="color:var(--text); background:var(--card);">Beneficios</span>
           <h2 class="section-title">Una propuesta orientada al bienestar, la armonía y el cuidado de la piel</h2>
           <p class="section-text">
             Cada tratamiento acompaña una mejora estética sutil, respetando la naturalidad del rostro y la necesidad de cada persona.
@@ -1198,7 +1188,7 @@
     <section class="section" id="contacto">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow" style="color:var(--text); background:var(--card); border-color:var(--line);">Contacto</span>
+          <span class="eyebrow" style="color:var(--text); background:var(--card);">Contacto</span>
           <h2 class="section-title">Información clara para reservar de forma simple y directa</h2>
           <p class="section-text">
             Consultas, disponibilidad y coordinación de turnos por WhatsApp.
