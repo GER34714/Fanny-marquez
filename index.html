@@ -22,8 +22,8 @@
       --bg:#f7f1ed;
       --bg-soft:#fcf8f5;
       --card:rgba(255,255,255,.84);
-      --text:#2f2927;
-      --muted:#4a433f;
+      --text:#2b2421;
+      --muted:#413a36;
       --line:#e8ddd6;
       --accent:#b89586;
       --accent-2:#d9c3b7;
@@ -40,8 +40,8 @@
       --bg:#171312;
       --bg-soft:#211a18;
       --card:rgba(36,29,27,.84);
-      --text:#f3ece8;
-      --muted:#f0e4de;
+      --text:#f5efeb;
+      --muted:#eadfd8;
       --line:#3a2f2b;
       --accent:#d7b6a3;
       --accent-2:#8f7367;
@@ -384,12 +384,17 @@
     }
 
     .hero-actions{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:104px;
+      z-index:4;
       width:min(1240px, calc(100% - 32px));
       margin:0 auto;
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      padding:18px 0 0;
+      justify-content:flex-start;
     }
 
     .hero-chips{
@@ -438,15 +443,15 @@
 
     .mobile-hero-logo{
       display:none;
-      width:min(170px, 42vw);
+      width:min(270px, 62vw);
       aspect-ratio:1/1;
       position:absolute;
-      right:12px;
-      bottom:24px;
+      right:10px;
+      bottom:26px;
       z-index:3;
       border-radius:50%;
       overflow:hidden;
-      padding:8px;
+      padding:10px;
       background:rgba(255,255,255,.10);
       border:1px solid rgba(255,255,255,.24);
       backdrop-filter:blur(5px);
@@ -474,6 +479,7 @@
       font-size:clamp(2rem, 4vw, 3.2rem);
       line-height:1.05;
       letter-spacing:-.04em;
+      color:var(--text);
       text-shadow:0 2px 10px rgba(0,0,0,.05);
     }
 
@@ -524,6 +530,7 @@
       margin:0 0 12px;
       font-size:1.18rem;
       letter-spacing:-.02em;
+      color:var(--text);
       text-shadow:0 1px 6px rgba(0,0,0,.04);
     }
 
@@ -599,6 +606,7 @@
       margin:0 0 10px;
       font-size:1.4rem;
       letter-spacing:-.03em;
+      color:var(--text);
       text-shadow:0 1px 6px rgba(0,0,0,.04);
     }
 
@@ -634,6 +642,7 @@
       margin-bottom:8px;
       font-size:1.02rem;
       letter-spacing:-.02em;
+      color:var(--text);
       text-shadow:0 1px 6px rgba(0,0,0,.04);
     }
 
@@ -691,6 +700,7 @@
       font-size:clamp(2rem, 4.5vw, 3.2rem);
       line-height:1.05;
       letter-spacing:-.04em;
+      color:var(--text);
       text-shadow:0 2px 10px rgba(0,0,0,.05);
     }
 
@@ -707,10 +717,11 @@
     }
 
     .site-footer{
-      padding:28px 0 110px;
+      padding:28px 0;
       border-top:1px solid var(--line);
       position:relative;
       z-index:5;
+      margin-bottom:0;
     }
 
     .footer-inner{
@@ -802,15 +813,15 @@
       }
 
       .hero-banner{
-        min-height:520px;
+        min-height:640px;
         background-position:center center;
         background-size:cover;
       }
 
       .hero-inner{
         width:min(100% - 20px, 1120px);
-        min-height:520px;
-        padding:22px 0 168px;
+        min-height:640px;
+        padding:22px 0 196px;
         gap:0;
         align-items:start;
       }
@@ -820,7 +831,7 @@
       }
 
       .hero-copy{
-        max-width:min(62%, 420px);
+        max-width:min(56%, 380px);
         align-self:start;
         padding-top:0;
         position:relative;
@@ -841,7 +852,17 @@
 
       .hero-actions{
         width:min(100% - 20px, 1120px);
-        padding:14px 0 0;
+        left:50%;
+        right:auto;
+        transform:translateX(-50%);
+        bottom:144px;
+        padding:0;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .hero-actions .btn{
+        width:min(340px, 56vw);
       }
 
       .hero-chips{
@@ -881,14 +902,14 @@
       }
 
       .hero-banner{
-        min-height:500px;
+        min-height:620px;
         background-position:center center;
         background-size:cover;
       }
 
       .hero-inner{
-        min-height:500px;
-        padding:18px 0 158px;
+        min-height:620px;
+        padding:18px 0 190px;
       }
 
       .hero-actions,
@@ -896,8 +917,12 @@
         gap:10px;
       }
 
-      .btn{
-        width:100%;
+      .hero-actions{
+        bottom:134px;
+      }
+
+      .hero-actions .btn{
+        width:min(300px, 56vw);
       }
 
       #sobre-mi{
@@ -915,9 +940,9 @@
       }
 
       .mobile-hero-logo{
-        width:min(150px, 40vw);
-        right:10px;
-        bottom:18px;
+        width:min(250px, 64vw);
+        right:8px;
+        bottom:16px;
       }
 
       .gallery-item{
@@ -946,10 +971,6 @@
         padding:26px 18px;
       }
 
-      .site-footer{
-        padding-bottom:104px;
-      }
-
       .footer-inner{
         flex-direction:column;
         align-items:flex-start;
@@ -970,7 +991,7 @@
 
     @media (max-width: 560px){
       .hero-copy{
-        max-width:min(58%, 300px);
+        max-width:min(52%, 250px);
       }
 
       .hero-copy h1{
@@ -980,6 +1001,19 @@
       .hero-copy p{
         font-size:.95rem;
         line-height:1.66;
+      }
+
+      .hero-actions .btn{
+        width:min(250px, 54vw);
+        min-height:48px;
+        padding:0 18px;
+        font-size:.92rem;
+      }
+
+      .mobile-hero-logo{
+        width:min(230px, 62vw);
+        right:6px;
+        bottom:14px;
       }
     }
   </style>
@@ -1054,6 +1088,11 @@
           </div>
         </div>
 
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
+          <a class="btn btn-secondary" href="#tratamientos">Ver tratamientos</a>
+        </div>
+
         <div class="hero-chips">
           <div class="quick-card">
             <strong>📍 Córdoba</strong>
@@ -1072,11 +1111,6 @@
             <span>Cuidado pensado para cada piel</span>
           </div>
         </div>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://wa.me/543512436879?text=Hola%20Fanny%2C%20quiero%20reservar%20un%20turno." target="_blank" rel="noopener noreferrer">Reservar turno por WhatsApp</a>
-        <a class="btn btn-secondary" href="#tratamientos">Ver tratamientos</a>
       </div>
     </section>
 
@@ -1386,4 +1420,4 @@
     window.addEventListener("load", updateWhatsAppPosition);
   </script>
 </body>
-</html>
+  </html>
